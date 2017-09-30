@@ -1,5 +1,7 @@
 <center>
 <style type="text/css">
+
+/* For the existing default items of the homepage */
 #aboutme_panel, #contact_panel, #dev_panel, #wishlist_panel, #visitors_panel,
 #messages_panel, #tagcloud_panel, #stickers_panel, #collect_panel,
 #room_panel, #rankings_panel, #cool_panel, #gallery_panel, #friends_panel,
@@ -8,39 +10,39 @@
   width: 900px !important;
 }
 
-#rightColumn {
+/* For the existing default items of the homepage */
+#rss_panel_header, #avatar_name, #footerBanner, #rightColumn {
   display: none !important;
 }
 
-#rss_panel_header, #avatar_name, #footerBanner {
-  display: none !important;
-}
-
-body {
-  background-color: black;
-}
-
+/* No idea what this id is, but it could be important? */
+/*
 #main {
  background:none;
  border:none;
 }
-#myHeader {
+*/
+
+body {
+  margin: 0;
+  padding: 0;
   background-color: black;
 }
-#myNav ul {
+
+/** NAVIGATION BAR **/
+
+#my-navbar > ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
   overflow: hidden;
 }
-
-#myNav li {
+#my-navbar > ul > li {
   display: inline-block;
   padding: 12px 3%;
   border-bottom: 1px solid transparent;
 }
-
-#myNav li a {
+#my-navbar > ul > li a {
   color: white;
   text-align: center;
   text-decoration: none;
@@ -50,12 +52,10 @@ body {
   font-weight: 200;
   font-size: 12px;
 }
-
-#myNav li:hover {
+#my-navbar > ul > li:hover {
   border-bottom: 1px solid #fff;
 }
-
-#myNav .dropdown-box {
+#my-navbar .dropdown-menu-item .dropdown-container {
   display: none;
   position: absolute;
   left: 0;
@@ -66,16 +66,14 @@ body {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
-#myNav .dropdown-box a {
+#my-navbar .dropdown-menu-item .dropdown-container a {
   display: block;
   padding: 12px 16px;
   text-align: center;
   color: white;
   text-decoration: none;
 }
-
-#myNav .dropdown-box a:hover {
+#my-navbar .dropdown-menu-item .dropdown-container a:hover {
   font-weight: bold;
   color: rgb(77,57,6);
   background: rgb(244,192,21); /* For browsers that do not support gradients */
@@ -84,90 +82,163 @@ body {
   background: -moz-radial-gradient(rgba(255,255,255,1), rgba(244,192,21,.7) 35%, rgba(244,192,21,0) 65%); /* For Firefox 3.6 to 15 */
   background: radial-gradient(rgba(255,255,255,1), rgba(244,192,21,.7) 35%, rgba(244,192,21,0) 65%); /* Standard syntax */
 }
-
-#myNav .dropdown:hover .dropdown-box {
+#my-navbar .dropdown-menu-item:hover .dropdown-container {
   display: block;
 }
 
-#myContent {
+/** TAB CONTENT **/
+
+#my-content-container {
   max-width: 900px;
   border: 0;
-  padding: 32px 0 0 0;
+  padding: 20px 0 0 0;
 }
-.my-about {
-  content: url("http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_qt2O0Kqoue1798577538.jpg");
+#my-content-container > .switchable-tab-content {
+  word-spacing: 2px;
+  letter-spacing: 0.3px;
+  color: #aaa;
 }
-.liliya-collection {
-  content: url("http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_Fz4EAQziYP2020546058.png");
+#my-content-container > .this-is-a-product > div {
+  width: 100%;
+  padding: 20px 0px;
+  margin: 0px auto;
+  font-family: sans-serif;
+  box-sizing: border-box;
 }
-.anna-collection {
-  content: url("http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_aVy7YhObXa1695349282.png");
+#my-content-container > .this-is-a-product .special-collection {
+  font-family: sans-serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 2em;
+  text-decoration: none;
 }
-.valenrina-collection {
-  content: url("http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_vCFy0Qp8ax742553601.png");
+#my-content-container > .this-is-a-product .product-description {
+  width: 80%;
 }
-.default-for-now {
-  content: url("http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_Iz140IiRB21602745049.png");
+#my-content-container > .this-is-a-product .product-image {
+  max-height: 500px;
 }
 
+#about-aralindale {
+  overflow: hidden;
+}
+#about-aralindale > div {
+  padding: 20px 0px;
+}
+#aralindale-pic {
+  float: left;
+}
+#aralindale-pic img {
+  max-height: 500px;
+}
+#aralindale-description {
+  overflow: hidden;
+}
 </style>
-<!-- NOTE: the entire page is iframed in #avatar_content; panel is #rss_panel; panel content begins inside #rss_panel_extra_html_show -->
-
-<div id="myHeader">
-  <div id="myLogo">
-    <a href="http://www.imvu.com/shop/web_search.php?manufacturers_id=1723973" target="_blank"><img src="http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_Iz140IiRB21602745049.png" alt="Header Banner"/></a>
-  </div>
-  <nav id="myNav" role="navigation">
-    <ul>
-      <li class="dropdown">
-        <a href="javascript:void(0)">COLLECTIONS</a>
-        <div class="dropdown-box">
-          <a href="javascript:void(0);" onclick="showContentFor('liliya')">Liliya</a>
-          <a href="javascript:void(0);" onclick="showContentFor('anna')">Anna</a>
-          <a href="javascript:void(0);" onclick="showContentFor('yulia')">Yulia</a>
-          <a href="javascript:void(0);" onclick="showContentFor('valenrina')">Valenrina</a>
-        </div>
-      </li>
-      <li><a href="#gowns">LONG GOWNS</a></li>
-      <li><a href="#latin">LITTLE DRESSES</a></li>
-      <li class="dropdown">
-        <a href="javascript:void(0)">MORE</a>
-        <div class="dropdown-box">
-          <a href="javascript:void(0);">Eyes</a>
-          <a href="javascript:void(0);">Tops</a>
-          <a href="javascript:void(0);">Bottoms</a>
-        </div>
-      </li>
-      <li><a href="http://www.imvu.com/shop/web_search.php?manufacturers_id=1723973" target="blank_">SHOP</a></li>
-      <li><a href="javascript:void(0);" onclick="showContentFor('about')">ABOUT</a></li>
-    </ul>
-  </nav>
-</div>
 
 <script type="text/javascript">
-function showContentFor(linky) {
-  var x = document.getElementById("myContent");
-  switch(linky) {
-    case "about":
-        x.className = "my-about";
-        break;
-    case "liliya":
-        x.className = "liliya-collection";
-        break;
-    case "anna":
-        x.className = "anna-collection";
-        break;
-    case "valenrina":
-        x.className = "valenrina-collection";
-        break;
-    default:
-        x.className = "default-for-now";
+function showContentFor(tabContentId) {
+  var i;
+  var x = document.getElementsByClassName("switchable-tab-content");
+  for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
   }
+  document.getElementById(tabContentId).style.display = "block";
 }
 </script>
 
-<div id="myContent">
+<!-- NOTE: the entire page is iframed in #avatar_content; panel is #rss_panel; panel content begins inside #rss_panel_extra_html_show -->
+
+<div id="my-header">
+  <a href="http://www.imvu.com/shop/web_search.php?manufacturers_id=1723973" target="_blank"><img src="http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_Iz140IiRB21602745049.png" alt="Header Banner"/></a>
 </div>
-<!-- <a href="http://www.imvu.com/shop/web_search.php?manufacturers_id=1723973" target="_blank"><img style="max-height:500px" src="http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_aVy7YhObXa1695349282.png" border="0" alt="Product Preview"/></a> -->
+<nav id="my-navbar" role="navigation">
+  <ul>
+    <li class="dropdown-menu-item">
+      <a href="javascript:void(0)">COLLECTIONS</a>
+      <div class="dropdown-container">
+        <a href="javascript:void(0);" onclick="showContentFor('liliya')">Liliya</a>
+        <a href="javascript:void(0);" onclick="showContentFor('anna')">Anna</a>
+        <a href="javascript:void(0);" onclick="showContentFor('yulia')">Yulia</a>
+        <a href="javascript:void(0);" onclick="showContentFor('valenrina')">Valenrina</a>
+      </div>
+    </li>
+    <li><a href="javascript:void(0);">LONG GOWNS</a></li>
+    <li><a href="javascript:void(0);">LITTLE DRESSES</a></li>
+    <li class="dropdown-menu-item">
+      <a href="javascript:void(0)">MORE</a>
+      <div class="dropdown-container">
+        <a href="javascript:void(0);" onclick="showContentFor('eyes')">Eyes</a>
+        <a href="javascript:void(0);">Tops</a>
+        <a href="javascript:void(0);">Bottoms</a>
+      </div>
+    </li>
+    <li><a href="http://www.imvu.com/shop/web_search.php?manufacturers_id=1723973" target="blank_">SHOP</a></li>
+    <li><a href="javascript:void(0);" onclick="showContentFor('about-aralindale')">ABOUT</a></li>
+  </ul>
+</nav>
+
+<div id="my-content-container">
+  <div id="liliya" class="switchable-tab-content this-is-a-product" style="display:none">
+    <div>
+      <a href="http://www.imvu.com/shop/web_search.php?keywords=liliya&within=creator&manufacturers_id=1723973" target="blank_">
+        <img class="product-image" src="http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_Fz4EAQziYP2020546058.png" border="0" alt="Product Preview"/></a>
+    </div>
+    <div class="product-description">
+      Welcome to the <span class="special-collection">Liliya</span> gown collection!
+      <br><br>
+      At the heart of this collection is the sparkling, lily-shaped neckline and daringly open back of each dress. The heavy, full skirt is two layers of silk -- dreamy chiffon over luxurious satin, which drapes closely but flares out dramatically when dancing. Some dresses in this collection have beautiful, airy silks that float gracefully with your movements, while others will enchant you with their simple, clean lines alone. Perfect for waltzing across those ballroom floors. All eyes will be on you!
+    </div>
+  </div>
+  <div id="anna" class="switchable-tab-content this-is-a-product" style="display:none">
+    <div>
+      <a href="http://www.imvu.com/shop/web_search.php?keywords=anna&within=creator&manufacturers_id=1723973" target="blank_">
+        <img class="product-image" src="http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_aVy7YhObXa1695349282.png" border="0" alt="Product Preview"/></a>
+    </div>
+    <div class="product-description">
+      Welcome to the <span class="special-collection">Anna</span> gown collection!
+      <br><br>
+      Dazzling long silk gowns, encrusted with gold crystals at the bodice. The skirt is two layers of cascading silk chiffon, the top layer parting in a gentle V-shape and edged with more stones. Sheer mesh panels show off your figure. Fine golden chains hold it all together at a ring at your back. Ethereal, classy, and subtly sexy. The floor is yours in this dress!
+    </div>
+  </div>
+  <div id="yulia" class="switchable-tab-content this-is-a-product" style="display:none">
+    <div>
+      <a href="http://www.imvu.com/shop/web_search.php?keywords=yulia&within=creator&manufacturers_id=1723973" target="blank_">
+        <img class="product-image" src="" border="0" alt="Product Preview"/></a>
+    </div>
+    <div class="product-description">
+      Welcome to the <span class="special-collection">Yulia</span> dress collection!
+      <br><br>
+      This collection is all about slinky strings of crystals, pearls, and jewellery-fine chains. They swish and swirl and sparkle as you move, leaving friends and foes alike seeing stars in your wake. These are the perfect little cocktail dresses, with the right mix of classy elegance and drop-dead gorgeous.
+    </div>
+  </div>
+  <div id="valenrina" class="switchable-tab-content this-is-a-product" style="display:none">
+    <div>
+      <a href="http://www.imvu.com/shop/web_search.php?keywords=valenrina&within=creator&manufacturers_id=1723973" target="blank_">
+        <img class="product-image" src="http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_vCFy0Qp8ax742553601.png" border="0" alt="Product Preview"/></a>
+    </div>
+    <div class="product-description">
+      Welcome to the <span class="special-collection">Valenrina</span> dress collection!
+      <br><br>
+      This collection features sexy, slinky fringes and beautiful, sparkling sequins and crystals. Each dress walks the edge between elegance and va-va-voom, so wear one for a classy evening out or while breaking out those seductive dance moves. These are made to DAZZLE with sparkles in all the right places. Luxuriate in the heavy, sensuous fringes against your legs as you take on the world!
+    </div>
+  </div>
+  <div id="eyes" class="switchable-tab-content this-is-a-product" style="display:none">
+    <div>
+      <a href="http://www.imvu.com/shop/web_search.php?keywords=eyes&within=creator&manufacturers_id=1723973" target="blank_">
+        <img class="product-image" src="http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_THAEugp9qh605922229.png" border="0" alt="Product Preview"/></a>
+    </div>
+    <div class="product-description">
+      They say that the eyes are the window to the soul. These beautiful eyes hold an exaggerated shine that creates an ethereal and starry-eyed look, both up close and from a distance. They will stand out from across the dancefloor.
+    </div>
+  </div>
+
+  <div id="about-aralindale" class="switchable-tab-content" style="display:none">
+    <div id="aralindale-pic">
+      <img src="http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_qt2O0Kqoue1798577538.jpg" border="0" alt="Aralindale"/>
+    </div>
+    <div id="aralindale-description">Aralindale is cool.</div>
+  </div>
+</div>
 
 </center>
