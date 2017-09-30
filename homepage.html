@@ -1,0 +1,173 @@
+<center>
+<style type="text/css">
+#aboutme_panel, #contact_panel, #dev_panel, #wishlist_panel, #visitors_panel,
+#messages_panel, #tagcloud_panel, #stickers_panel, #collect_panel,
+#room_panel, #rankings_panel, #cool_panel, #gallery_panel, #friends_panel,
+#streetteam_panel, #blog_panel, #video_panel_header, #music_panel, #rss_panel, #url_panel,
+#special_panel,#outfits_panel {
+  width: 900px !important;
+}
+
+#rightColumn {
+  display: none !important;
+}
+
+#rss_panel_header, #avatar_name, #footerBanner {
+  display: none !important;
+}
+
+body {
+  background-color: black;
+}
+
+#main {
+ background:none;
+ border:none;
+}
+#myHeader {
+  background-color: black;
+}
+#myNav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+#myNav li {
+  display: inline-block;
+  padding: 12px 3%;
+  border-bottom: 1px solid transparent;
+}
+
+#myNav li a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-style: normal;
+  font-family: sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+}
+
+#myNav li:hover {
+  border-bottom: 1px solid #fff;
+}
+
+#myNav .dropdown-box {
+  display: none;
+  position: absolute;
+  left: 0;
+  margin: 14px 0 0 0;
+  padding: 20px 0 12px 0;
+  width: 100%;
+  background-color: black;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+#myNav .dropdown-box a {
+  display: block;
+  padding: 12px 16px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+#myNav .dropdown-box a:hover {
+  font-weight: bold;
+  color: rgb(77,57,6);
+  background: rgb(244,192,21); /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(rgba(255,255,255,1), rgba(244,192,21,.7) 35%, rgba(244,192,21,0) 65%); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(rgba(255,255,255,1), rgba(244,192,21,.7) 35%, rgba(244,192,21,0) 65%); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(rgba(255,255,255,1), rgba(244,192,21,.7) 35%, rgba(244,192,21,0) 65%); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(rgba(255,255,255,1), rgba(244,192,21,.7) 35%, rgba(244,192,21,0) 65%); /* Standard syntax */
+}
+
+#myNav .dropdown:hover .dropdown-box {
+  display: block;
+}
+
+#myContent {
+  max-width: 900px;
+  border: 0;
+  padding: 32px 0 0 0;
+}
+.my-about {
+  content: url("http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_qt2O0Kqoue1798577538.jpg");
+}
+.liliya-collection {
+  content: url("http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_Fz4EAQziYP2020546058.png");
+}
+.anna-collection {
+  content: url("http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_aVy7YhObXa1695349282.png");
+}
+.valenrina-collection {
+  content: url("http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_vCFy0Qp8ax742553601.png");
+}
+.default-for-now {
+  content: url("http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_Iz140IiRB21602745049.png");
+}
+
+</style>
+<!-- NOTE: the entire page is iframed in #avatar_content; panel is #rss_panel; panel content begins inside #rss_panel_extra_html_show -->
+
+<div id="myHeader">
+  <div id="myLogo">
+    <a href="http://www.imvu.com/shop/web_search.php?manufacturers_id=1723973" target="_blank"><img src="http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_Iz140IiRB21602745049.png" alt="Header Banner"/></a>
+  </div>
+  <nav id="myNav" role="navigation">
+    <ul>
+      <li class="dropdown">
+        <a href="javascript:void(0)">COLLECTIONS</a>
+        <div class="dropdown-box">
+          <a href="javascript:void(0);" onclick="showContentFor('liliya')">Liliya</a>
+          <a href="javascript:void(0);" onclick="showContentFor('anna')">Anna</a>
+          <a href="javascript:void(0);" onclick="showContentFor('yulia')">Yulia</a>
+          <a href="javascript:void(0);" onclick="showContentFor('valenrina')">Valenrina</a>
+        </div>
+      </li>
+      <li><a href="#gowns">LONG GOWNS</a></li>
+      <li><a href="#latin">LITTLE DRESSES</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)">MORE</a>
+        <div class="dropdown-box">
+          <a href="javascript:void(0);">Eyes</a>
+          <a href="javascript:void(0);">Tops</a>
+          <a href="javascript:void(0);">Bottoms</a>
+        </div>
+      </li>
+      <li><a href="http://www.imvu.com/shop/web_search.php?manufacturers_id=1723973" target="blank_">SHOP</a></li>
+      <li><a href="javascript:void(0);" onclick="showContentFor('about')">ABOUT</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script type="text/javascript">
+function showContentFor(linky) {
+  var x = document.getElementById("myContent");
+  switch(linky) {
+    case "about":
+        x.className = "my-about";
+        break;
+    case "liliya":
+        x.className = "liliya-collection";
+        break;
+    case "anna":
+        x.className = "anna-collection";
+        break;
+    case "valenrina":
+        x.className = "valenrina-collection";
+        break;
+    default:
+        x.className = "default-for-now";
+  }
+}
+</script>
+
+<div id="myContent">
+</div>
+<!-- <a href="http://www.imvu.com/shop/web_search.php?manufacturers_id=1723973" target="_blank"><img style="max-height:500px" src="http://userimages-akm.imvu.com/userdata/01/72/39/73/userpics/Snap_aVy7YhObXa1695349282.png" border="0" alt="Product Preview"/></a> -->
+
+</center>
